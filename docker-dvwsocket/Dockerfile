@@ -13,7 +13,7 @@ RUN chmod +x /usr/bin/composer
 
 WORKDIR /app
 RUN rm -fr /app
-RUN git clone https://github.com/interference-security/DVWS.git /app
+RUN git clone https://github.com/wjwoodson/DVWS.git /app
 COPY conf/setup_dvws.sh /app
 RUN chmod +x /app/setup_dvws.sh && \
     /app/setup_dvws.sh
