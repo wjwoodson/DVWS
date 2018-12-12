@@ -1,4 +1,7 @@
 <?php
+$wsHost = ('DVWS_WS_HOST') ?? 'dvws.local';
+$wsPort = ('DVWS_WS_PORT') ?? '8080';
+
 $page_data = <<<EOT
 <div class="page-header">
     <h1>Brute Force</h1>
@@ -29,7 +32,7 @@ EOT;
 $page_script= <<<EOT
 $(document).ready(function(){
 //Open a WS server connection
-var wsUri = "ws://dvws.local:8080/authenticate-user-prepared";
+var wsUri = "ws://".$wsHost.":".$wsPort."/authenticate-user-prepared";
 websocket = new WebSocket(wsUri);
 
 //Connected to WS server

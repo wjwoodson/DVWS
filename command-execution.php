@@ -1,4 +1,6 @@
 <?php
+$wsHost = ('DVWS_WS_HOST') ?? 'dvws.local';
+$wsPort = ('DVWS_WS_PORT') ?? '8080';
 $page_data = <<<EOT
 <div class="page-header">
     <h1>Command Execution</h1>
@@ -25,7 +27,7 @@ EOT;
 $page_script= <<<EOT
 $(document).ready(function(){
 //Open a WS server connection
-var wsUri = "ws://dvws.local:8080/command-execution";
+var wsUri = "ws://".$wsHost.":".$wsPort."/command-execution";
 websocket = new WebSocket(wsUri);
 
 //Connected to WS server

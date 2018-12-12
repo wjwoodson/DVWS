@@ -1,4 +1,7 @@
 <?php
+$wsHost = ('DVWS_WS_HOST') ?? 'dvws.local';
+$wsPort = ('DVWS_WS_PORT') ?? '8080';
+
 $page_data = <<<EOT
 <div class="page-header">
     <h1>File Inclusion</h1>
@@ -30,7 +33,7 @@ EOT;
 $page_script= <<<EOT
 $(document).ready(function(){
 //Open a WS server connection
-var wsUri = "ws://dvws.local:8080/file-inclusion";
+var wsUri = "ws://".$wsHost.":".$wsPort."/file-inclusion";
 websocket = new WebSocket(wsUri);
 
 //Connected to WS server

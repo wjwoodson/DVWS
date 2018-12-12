@@ -1,5 +1,8 @@
 <?php
 session_start();
+$wsHost = ('DVWS_WS_HOST') ?? 'dvws.local';
+$wsPort = ('DVWS_WS_PORT') ?? '8080';
+
 $page_data = <<<EOT
 <div class="page-header">
     <h1>Change Password</h1>
@@ -47,7 +50,7 @@ EOT;
 $page_script= <<<EOT
 $(document).ready(function(){
 //Open a WS server connection
-var wsUri = "ws://dvws.local:8080/authenticate-user-prepared-session";
+var wsUri = "ws://".$wsHost.":".$wsPort."authenticate-user-prepared-session";
 websocket = new WebSocket(wsUri);
 
 //Connected to WS server
@@ -87,7 +90,7 @@ $('#send').click(function()
 });
 
 //Open a WS server connection
-var wsUri2 = "ws://dvws.local:8080/change-password";
+var wsUri2 = "ws://".$wsHost.":".$wsPort."/change-password";
 websocket2 = new WebSocket(wsUri2);
 
 //Connected to WS server

@@ -20,6 +20,9 @@ require 'class/FileInclusion.php';
 require 'class/AuthenticateUserPreparedSession.php';
 require 'class/ChangePassword.php';
 
+$wsHost = ('DVWS_WS_HOST') ?? 'dvws.local';
+$wsPort = ('DVWS_WS_PORT') ?? '8080';
+
 $collection = new RouteCollection;
 $collection->add('command-execution', new Route('/command-execution', array(
         '_controller' => new Ratchet\WebSocket\WsServer(
@@ -91,6 +94,6 @@ $server = IoServer::factory(
     new HttpServer(
         $router
     ),
-    8080
+    (int)$wsPort
 );
 $server->run();

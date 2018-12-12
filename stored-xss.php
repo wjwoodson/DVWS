@@ -1,4 +1,7 @@
 <?php
+$wsHost = ('DVWS_WS_HOST') ?? 'dvws.local';
+$wsPort = ('DVWS_WS_PORT') ?? '8080';
+
 $page_data = <<<EOT
 <div class="page-header">
     <h1>Stored XSS</h1>
@@ -29,7 +32,7 @@ EOT;
 $page_script= <<<EOT
 $(document).ready(function(){
 //Open a WS server connection
-var wsUri = "ws://dvws.local:8080/post-comments";
+var wsUri = "ws://".$wsHost.":".$wsPort."/post-comments";
 websocket = new WebSocket(wsUri);
 
 //Connected to WS server
@@ -69,7 +72,7 @@ $('#send').click(function()
 
 //Show comments
 //Open a WS server connection
-var wsUri2 = "ws://dvws.local:8080/show-comments";
+var wsUri2 = "ws://".$wsHost.":".$wsPort."/show-comments";
 websocket2 = new WebSocket(wsUri2);
 
 //Connected to WS server
