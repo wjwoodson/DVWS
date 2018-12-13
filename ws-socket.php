@@ -20,8 +20,8 @@ require 'class/FileInclusion.php';
 require 'class/AuthenticateUserPreparedSession.php';
 require 'class/ChangePassword.php';
 
-$wsHost = ('DVWS_WS_HOST') ?? 'dvws.local';
-$wsPort = ('DVWS_WS_PORT') ?? '8080';
+$wsHost = getenv('DVWS_WS_HOST') ?: 'dvws.local';
+$wsPort = getenv('DVWS_WS_PORT') ?: '8080';
 
 $collection = new RouteCollection;
 $collection->add('command-execution', new Route('/command-execution', array(

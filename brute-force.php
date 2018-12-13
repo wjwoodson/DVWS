@@ -1,6 +1,6 @@
 <?php
-$wsHost = ('DVWS_WS_HOST') ?? 'dvws.local';
-$wsPort = ('DVWS_WS_PORT') ?? '8080';
+$wsHost = getenv('DVWS_WS_HOST') ?: 'dvws.local';
+$wsPort = getenv('DVWS_WS_PORT') ?: '8080';
 
 $page_data = <<<EOT
 <div class="page-header">
