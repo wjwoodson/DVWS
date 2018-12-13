@@ -27,7 +27,7 @@ EOT;
 $page_script= <<<EOT
 $(document).ready(function(){
 //Open a WS server connection
-var wsUri = "ws://".$wsHost.":".$wsPort."/command-execution";
+var wsUri = "ws://$wsHost:$wsPort/command-execution";
 websocket = new WebSocket(wsUri);
 
 //Connected to WS server

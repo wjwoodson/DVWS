@@ -32,7 +32,7 @@ EOT;
 $page_script= <<<EOT
 $(document).ready(function(){
 //Open a WS server connection
-var wsUri = "ws://".$wsHost.":".$wsPort."/post-comments";
+var wsUri = "ws://$wsHost:$wsPort/post-comments";
 websocket = new WebSocket(wsUri);
 
 //Connected to WS server
@@ -72,7 +72,7 @@ $('#send').click(function()
 
 //Show comments
 //Open a WS server connection
-var wsUri2 = "ws://".$wsHost.":".$wsPort."/show-comments";
+var wsUri2 = "ws://$wsHost:$wsPort/show-comments";
 websocket2 = new WebSocket(wsUri2);
 
 //Connected to WS server

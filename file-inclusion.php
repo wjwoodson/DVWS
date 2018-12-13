@@ -33,7 +33,7 @@ EOT;
 $page_script= <<<EOT
 $(document).ready(function(){
 //Open a WS server connection
-var wsUri = "ws://".$wsHost.":".$wsPort."/file-inclusion";
+var wsUri = "ws://$wsHost:$wsPort/file-inclusion";
 websocket = new WebSocket(wsUri);
 
 //Connected to WS server

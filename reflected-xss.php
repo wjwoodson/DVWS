@@ -27,7 +27,7 @@ EOT;
 $page_script= <<<EOT
 $(document).ready(function(){
 //Open a WS server connection
-var wsUri = "ws://".$wsHost.":".$wsPort."/reflected-xss";
+var wsUri = "ws://$wsHost:$wsPort/reflected-xss";
 websocket = new WebSocket(wsUri);
 
 //Connected to WS server

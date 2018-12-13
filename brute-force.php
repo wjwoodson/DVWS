@@ -32,7 +32,7 @@ EOT;
 $page_script= <<<EOT
 $(document).ready(function(){
 //Open a WS server connection
-var wsUri = "ws://".$wsHost.":".$wsPort."/authenticate-user-prepared";
+var wsUri = "ws://$wsHost:$wsPort/authenticate-user-prepared";
 websocket = new WebSocket(wsUri);
 
 //Connected to WS server
